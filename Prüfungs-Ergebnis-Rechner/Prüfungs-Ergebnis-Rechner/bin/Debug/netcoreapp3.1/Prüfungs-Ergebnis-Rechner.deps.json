@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Prüfungs-Ergebnis-Rechner/1.0.0": {
+        "dependencies": {
+          "PrüfungsErgebnisRechner.Library": "1.0.0"
+        },
+        "runtime": {
+          "Prüfungs-Ergebnis-Rechner.dll": {}
+        }
+      },
+      "PrüfungsErgebnisRechner.Library/1.0.0": {
+        "runtime": {
+          "PrüfungsErgebnisRechner.Library.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Prüfungs-Ergebnis-Rechner/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PrüfungsErgebnisRechner.Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
