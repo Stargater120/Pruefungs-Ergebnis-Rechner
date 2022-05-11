@@ -7,20 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Canvas x:Name="Berechnungs_Feld" Margin="355,34,0,0" Grid.ColumnSpan="2">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="230"/>
-                    <ColumnDefinition Width="105"/>
-                    <ColumnDefinition Width="4"/>
-                    <ColumnDefinition Width="105"/>
-                </Grid.ColumnDefinitions>
-            </Grid>
-            <ListBox Grid.Column="1" BorderThickness="0" Height="400" Width="230" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-            <ListBox Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,4,0" Height="400" Width="106" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Center" Canvas.Left="222" VerticalAlignment="Center"/>
-            <ListBox Grid.Column="4" BorderThickness="0" Height="400" Width="105" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Canvas.Left="340" VerticalAlignment="Center"/>
-        </Canvas>
-        <ListBox x:Name="Tester_Liste" ItemsSource="{Binding Pupils}" Margin="0,58,460,0" BorderBrush="#FF080408" BorderThickness="2,2,2,2">
+
+        <ListBox BorderThickness="0" Height="374" Width="231" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Canvas.Top="26" VerticalAlignment="Top" Margin="348,60,0,0"/>
+        <ListBox x:Name="ReachedPointsList" ItemsSource="{Binding TextBoxes}" BorderBrush="Black" BorderThickness="0,0,4,0" Height="374" Width="106" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Canvas.Left="222" VerticalAlignment="Top" Canvas.Top="26" Margin="584,58,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox BorderThickness="0" Height="374" Width="105" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Canvas.Left="333" VerticalAlignment="Top" Canvas.Top="26" Margin="695,58,0,0"/>
+        <ListBox Grid.Column="0" x:Name="Tester_Liste" ItemsSource="{Binding Pupils}" Margin="0,60,460,-2" BorderBrush="#FF080408" BorderThickness="2,2,2,2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

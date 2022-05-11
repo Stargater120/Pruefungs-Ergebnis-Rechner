@@ -1,4 +1,5 @@
-﻿using Prüfungs_Ergebnis_Rechner.DisplayModels;
+﻿using Prüfungs_Ergebnis_Rechner.Display_Lists;
+using Prüfungs_Ergebnis_Rechner.DisplayModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,9 @@ namespace Prüfungs_Ergebnis_Rechner
         {
             InitializeComponent();
             var test = new PrüflingsListModel();
+            var ergebnisse = new ResultList();
             Tester_Liste.ItemsSource = test.Pupils;
+            ReachedPointsList.ItemsSource = ergebnisse.GetTextBoxList();
         }
     }
 }

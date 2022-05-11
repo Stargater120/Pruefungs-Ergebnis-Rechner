@@ -14,26 +14,26 @@ namespace PrüfungsProjekt
 
     public static class ExamPreparer
     {
-        public static List<Exams> PrepareExams(Ausbildungen ausbildung)
+        public static Exams[] PrepareExams(Ausbildungen ausbildung)
         {
-            List<Exams> exams = new List<Exams>();
+            Exams[] exams;
             switch (ausbildung)
             {
                 case Ausbildungen.Fachinformatiker:
-                    exams.AddRange(new Exams[] { new Exams("Einrichten eines IT-geschützten Arbeitsplatzes", 20, 1), new Exams("Planen eines Softwareproduktes", 10, 2), new Exams("Entwicklung und Umsetzung von Algorithmen", 10, 2), new Exams("Wirtschafts- und Sozialkunde", 10, 2), new Exams("Betriebliche Projektarbeit", 50, 2), new Exams("Präsentation und Fachgespräch", 50, 2), new Exams("Planen und Umsetzen eines Softwareprojekts", 50, 2) });
+                    exams = new Exams[] { new Exams("Einrichten eines IT-geschützten Arbeitsplatzes", 20, 1), new Exams("Planen eines Softwareproduktes", 10, 2), new Exams("Entwicklung und Umsetzung von Algorithmen", 10, 2), new Exams("Wirtschafts- und Sozialkunde", 10, 2), new Exams("Betriebliche Projektarbeit", 50, 2), new Exams("Präsentation und Fachgespräch", 50, 2), new Exams("Planen und Umsetzen eines Softwareprojekts", 50, 2) };
                     break;
                 case Ausbildungen.Kaufmann_Digitalisierung:
-                    exams.AddRange(new Exams[] { });
+                    exams = new Exams[] { };
                     break;
                 case Ausbildungen.System_Management:
-                    exams.AddRange(new Exams[] { });
+                    exams = new Exams[] { };
                     break;
                 case Ausbildungen.System_Elektroniker:
-                    exams.AddRange(new Exams[] { });
+                    exams = new Exams[] { };
                     break;
+                default: throw new NotImplementedException("Dieser Fall exisitert nicht");
             }
-
-            return new List<Exams>();
+            return exams;
         }
     }
 }
