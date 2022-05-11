@@ -16,14 +16,15 @@ namespace Prüfungs_Ergebnis_Rechner.DisplayModels
             {
                 return new List<Pupil>
                 {
-                    
-                    new Pupil{ID = 0, Name = "User1", Vorname = "Tester1"},
-                    new Pupil{ID = 1, Name = "User2", Vorname = "Tester2"},
-                    new Pupil{ID = 2, Name = "User3", Vorname = "Tester3"},
-                    new Pupil{ID = 3, Name = "User4", Vorname = "Tester4"},
-                    new Pupil{ID = 4, Name = "User5", Vorname = "Tester5"},
-                    new Pupil{ID = 5, Name = "User6", Vorname = "Tester6"},
-                    new Pupil{ID = 6, Name = "User7", Vorname = "Tester7"},
+
+                    new Pupil(Ausbildungen.Fachinformatiker,"User1","Tester1", 0),
+                    new Pupil(Ausbildungen.Fachinformatiker,"User1","Tester1", 0),
+                    new Pupil(Ausbildungen.Fachinformatiker,"User1","Tester1", 0),
+                    new Pupil(Ausbildungen.Fachinformatiker,"User1","Tester1", 0),
+                    new Pupil(Ausbildungen.Fachinformatiker,"User1","Tester1", 0),
+                    new Pupil(Ausbildungen.Fachinformatiker,"User1","Tester1", 0),
+                    new Pupil(Ausbildungen.Fachinformatiker,"User1","Tester1", 0),
+                    new Pupil(Ausbildungen.Fachinformatiker,"User1","Tester1", 0),
                 };
             }
             set

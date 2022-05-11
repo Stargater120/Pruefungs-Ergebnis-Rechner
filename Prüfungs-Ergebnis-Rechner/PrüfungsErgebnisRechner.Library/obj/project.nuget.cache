@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YJh4dBgd3opK1KLr0m0JC6T6k1cpKb+7aF8WypnB0KL8bdeWWHk7x7jm6f/vy4TAO+UX1aPeEQJQ2O5u7eVZlQ==",
+  "dgSpecHash": "MVw7wGAHFTnCQn+qMxTsF8yE/JvZC8QK39BEFZq3PUR3hY4iZaWUtRnN4mIg/l9BaWTcr+vV7olZPTXsYE7OAA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tobia\\OneDrive\\Dokumente\\School\\LF5\\Prüfngs-Ergebnis-Rechner\\Pruefungs-Ergebnis-Rechner\\Prüfungs-Ergebnis-Rechner\\PrüfungsErgebnisRechner.Library\\PrüfungsErgebnisRechner.Library.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Tobia\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

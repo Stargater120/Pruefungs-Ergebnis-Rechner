@@ -46,7 +46,8 @@ namespace PrüfungsProjekt
 
         public static List<Pupil> ReadFile(string path)
         {
-            return JsonConverter.ConvertFromJson(path);
+            var test = JsonConverter.ConvertFromJson(path);
+            return test;
         }
     }
 
@@ -64,8 +65,8 @@ namespace PrüfungsProjekt
                 throw new Exception("No path was given");
             }
             string text = File.ReadAllText(path);
-
-            return JsonConvert.DeserializeObject<List<Pupil>>(text);
+            var test = JsonConvert.DeserializeObject<List<Pupil>>(text);
+            return test;
         }
     }
 }

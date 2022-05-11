@@ -8,7 +8,8 @@ namespace PrüfungsProjekt
     {
         public string Name { get; private set; }
         public int Gewichtung { get; private set; }
-        public int ReachedPoints { get => ReachedPoints; set { if (value < 0) ReachedPoints = 0; else if (value > 100) ReachedPoints = 100; else ReachedPoints = value; } }
+        private int reached { get; set; }
+        public int ReachedPoints { get => reached; set { if (value < 0) reached = 0; else if (value > 100) reached = 100; else reached = value; } }
         public int ExamPart { get; private set; }
         public int Grade { get => GetGrade(); }
 
@@ -18,9 +19,9 @@ namespace PrüfungsProjekt
 
             if (ReachedPoints < 30) result = 6;
             else if (ReachedPoints < 50) result = 5;
-            else if (ReachedPoints < 70) result = 4;
-            else if (ReachedPoints < 80) result = 3;
-            else if (ReachedPoints < 90) result = 2;
+            else if (ReachedPoints < 67) result = 4;
+            else if (ReachedPoints < 81) result = 3;
+            else if (ReachedPoints < 92) result = 2;
             else result = 1;
 
             return result;
@@ -33,7 +34,7 @@ namespace PrüfungsProjekt
             ExamPart = exampart;
         }
 
-        public static int Result(List<Exams> exams)
+        public static int Result(Exams[] exams)
         {
             int result = 0;
             
