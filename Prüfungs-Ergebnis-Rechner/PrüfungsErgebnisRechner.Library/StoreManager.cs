@@ -62,6 +62,8 @@ namespace PrüfungsProjekt
             if (string.IsNullOrEmpty(path))
             {
                 throw new Exception("No path was given");
+            }else if(!path.EndsWith(".prf")){
+                throw new Exception("File Type is not accepted");
             }
             string text = File.ReadAllText(path);
 
