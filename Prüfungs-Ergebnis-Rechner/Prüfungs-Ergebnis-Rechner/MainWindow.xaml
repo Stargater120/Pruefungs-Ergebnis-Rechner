@@ -5,32 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prüfungs_Ergebnis_Rechner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Tobias und Leon" Height="450" Width="800">
     <Grid>
-
-        <ListBox BorderThickness="0" Height="374" Width="231" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Canvas.Top="26" VerticalAlignment="Top" Margin="348,60,0,0"/>
-        <ListBox x:Name="ReachedPointsList" ItemsSource="{Binding TextBoxes}" BorderBrush="Black" BorderThickness="0,0,4,0" Height="374" Width="106" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Canvas.Left="222" VerticalAlignment="Top" Canvas.Top="26" Margin="584,58,0,0">
+        <ListBox x:Name="PrüfungsNamenListe" BorderThickness="0" Height="374" Width="231" ItemsSource="{Binding DisplaiedList}" HorizontalAlignment="Left" Canvas.Top="26" VerticalAlignment="Top" Margin="348,60,0,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-
+                    <TextBlock Text="{Binding Path=Name}" Height="25" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="ReachedPointsList" BorderBrush="Black" BorderThickness="0,0,4,0" Height="374" Width="106" ItemsSource="{Binding DisplaiedList}" HorizontalAlignment="Left" Canvas.Left="222" VerticalAlignment="Top" Canvas.Top="26" Margin="584,58,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Text="{Binding Path=ReachedPoints}" Width="80" Height="25"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListBox BorderThickness="0" Height="374" Width="105" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Canvas.Left="333" VerticalAlignment="Top" Canvas.Top="26" Margin="695,58,0,0"/>
+        <ListBox x:Name="GradeList" BorderThickness="0" Height="374" Width="105" ItemsSource="{Binding DisplaiedList}" HorizontalAlignment="Left" Canvas.Left="333" VerticalAlignment="Top" Canvas.Top="26" Margin="695,58,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Grade}" Height="25"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <ListBox Grid.Column="0" x:Name="Tester_Liste" ItemsSource="{Binding Pupils}" Margin="0,60,460,-2" BorderBrush="#FF080408" BorderThickness="2,2,2,2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Path=ID}"/>
-                        <TextBlock Text="{Binding Path=Name}"/>
-                        <TextBlock Text="{Binding Path=Vorname}"/>
+                        <Border BorderBrush="Black" BorderThickness="1">
+                            <TextBlock Text="{Binding Path=ID}"/>
+                        </Border>
+                        <Border>
+                            <TextBlock Text="{Binding Path=Name}"/>
+                        </Border>
+                        <Border>
+                            <TextBlock Text="{Binding Path=Vorname}"/>
+                        </Border>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="AddTester" Content="Prüfling Hinzufügen" HorizontalAlignment="Left" Margin="5,14,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
+        <Button x:Name="AddTester" Content="Prüfling Hinzufügen" HorizontalAlignment="Left" Margin="5,14,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="OpenAddPrüfling"/>
+        <ComboBox SelectedItem="{Binding AusgewählterBeruf}" HorizontalAlignment="Left" Margin="194,14,0,0" VerticalAlignment="Top" Width="120" Height="30">
+            <ListBox x:Name="BerufSlector" ItemsSource="{Binding nameList}" BorderThickness="0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding}" Selector.Selected="TextBlock_Selected"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ComboBox>
 
     </Grid>
 </Window>
