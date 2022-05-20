@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace PrüfungsProjekt
@@ -34,6 +35,17 @@ namespace PrüfungsProjekt
                 default: throw new NotImplementedException("Dieser Fall exisitert nicht");
             }
             return exams;
+        }
+
+        public static ObservableCollection<string> GetListOfAusbildungen()
+        {
+            var nameList = new ObservableCollection<string>();
+            foreach (var name in Enum.GetNames(typeof(Ausbildungen)))
+            {
+                nameList.Add(name);
+            }
+
+            return nameList;
         }
     }
 }

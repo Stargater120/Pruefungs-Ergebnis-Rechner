@@ -1,6 +1,8 @@
 ﻿using PrüfungsProjekt;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -9,50 +11,23 @@ namespace Prüfungs_Ergebnis_Rechner.Display_Lists
 {
     public class ResultList
     {
-        private List<Exams> _DisplaiedList = new List<Exams>();
-        private List<TextBox> TextBoxes = new List<TextBox>();
+        private ObservableCollection<Exams> _DisplaiedList = new ObservableCollection<Exams>();
 
-        private void PopulateDisplaiedList()
+        public void PopulateDisplaiedList()
         {
-            for (int i = 0; i < 10; i++)
+            var examArray = ExamPreparer.PrepareExams(Ausbildungen.Fachinformatiker);
+            foreach (var item in examArray)
             {
-                var payload = new Exams($"test{i}", i*10, i);
-                _DisplaiedList.Add(payload);
+                _DisplaiedList.Add(item);
             }
         }
 
-        private void PopulateListBox()
+        public ObservableCollection<Exams> DisplaiedList
         {
-            foreach (var exam in _DisplaiedList)
+            get
             {
-                TextBoxes.Add(CreateTextBox(exam));
+                return _DisplaiedList;
             }
-        }
-
-        private TextBox CreateTextBox(Exams exam)
-        {
-            exam.ReachedPoints = 100;
-            TextBox txtb = new TextBox();
-
-            txtb.FontSize = 12;
-
-            txtb.Width = 200;
-            txtb.BorderBrush = new SolidColorBrush(Colors.Blue);
-
-            txtb.AppendText(exam.Name);
-
-            txtb.Background = new SolidColorBrush(Colors.Orange);
-
-            txtb.Foreground = new SolidColorBrush(Colors.Black);
-
-            return txtb;
-        }
-
-        public List<TextBox> GetTextBoxList()
-        {
-            PopulateDisplaiedList();
-            PopulateListBox();
-            return TextBoxes;
         }
     }
 }
