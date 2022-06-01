@@ -22,3 +22,5 @@ C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs
 C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\obj\Debug\netcoreapp3.1\Prüfungs-Ergebnis-Rechner.pdb
 C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\obj\Debug\netcoreapp3.1\Prüfungs-Ergebnis-Rechner.genruntimeconfig.cache
 C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\obj\Debug\netcoreapp3.1\AddPrüflingWindow.g.cs
+C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\obj\Debug\netcoreapp3.1\AddPrüflingWindow.baml

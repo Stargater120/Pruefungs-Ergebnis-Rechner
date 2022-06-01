@@ -1,0 +1,35 @@
+﻿<Window x:Class="Prüfungs_Ergebnis_Rechner.AddPrüflingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prüfungs_Ergebnis_Rechner"
+        mc:Ignorable="d"
+        Title="AddPrüflingWindow" Height="400" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Prüflings Nr." HorizontalAlignment="Center"/>
+        <TextBox x:Name="PNrI" Grid.Row="0" Margin="50 20"/>
+        <TextBlock Grid.Row="1" Text="Nachname" HorizontalAlignment="Center"/>
+        <TextBox x:Name="NnI" Grid.Row="1" Margin="50 20"/>
+        <TextBlock Grid.Row="2" Text="Vorname" HorizontalAlignment="Center"/>
+        <TextBox x:Name="VnI" Grid.Row="2" Margin="50 20"/>
+        <TextBlock Grid.Row="3" Text="Ausbildungsberuf" HorizontalAlignment="Center"/>
+        <ComboBox SelectedIndex="0" SelectionChanged="BerufSlectorW2_SelectionChanged" x:Name="BerufSlectorW2" ItemsSource="{Binding nameList}" Grid.Row="3" VerticalAlignment="Center" Margin="10,5,10,0" Width="180" Height="30">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Grid.Row="4" Width="100" Height="30" Content="Hinzufügen" Click="Hinzufügen"/>
+    </Grid>
+</Window>

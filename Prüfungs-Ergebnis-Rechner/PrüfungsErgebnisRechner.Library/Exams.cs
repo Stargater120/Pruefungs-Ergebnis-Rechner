@@ -1,17 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace PrüfungsProjekt
 {
-    public class Exams
+    public class Exams : INotifyPropertyChanged
     {
         public string Name { get; private set; }
         public int Gewichtung { get; private set; }
-        private int reached { get; set; }
-        public int ReachedPoints { get => reached; set { if (value < 0) reached = 0; else if (value > 100) reached = 100; else reached = value; } }
+        private int _ReachedPoints;
         public int ExamPart { get; private set; }
         public int Grade { get => GetGrade(); }
+        public int AbschlussPrüfungsTeil { get; set; }
+        public int BereichGesamt { get; private set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public int ReachedPoints
+        {
+            get => _ReachedPoints;
+            set
+            {
+                if (value < 0) _ReachedPoints = 0; else if (value > 100) _ReachedPoints = 100; else _ReachedPoints = value;
+                GetGrade();
+                OnPropertyChanged("ReachedPoints");
+                OnPropertyChanged("Grade");
+            }
+        }
 
         private int GetGrade ()
         {
@@ -26,12 +41,13 @@ namespace PrüfungsProjekt
 
             return result;
         }
-        public Exams(string name, int gewichtung, int exampart)
+        public Exams(string name, int gewichtung, int exampart, int apt)
         {
 
             Name = name;
             Gewichtung = gewichtung;
             ExamPart = exampart;
+            AbschlussPrüfungsTeil = apt;
         }
 
         public static int Result(Exams[] exams)
@@ -44,6 +60,18 @@ namespace PrüfungsProjekt
             }
 
             return result;
+        }
+
+        public void SetBereichGesamt(int value)
+        {
+            if(value < 0) { value = 0; }
+            if(value > 100) { value = 100; }
+            BereichGesamt = value;
+        }
+
+        protected void OnPropertyChanged(string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }
