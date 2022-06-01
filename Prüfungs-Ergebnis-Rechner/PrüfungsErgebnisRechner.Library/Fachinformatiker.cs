@@ -21,7 +21,7 @@ namespace PrüfungsProjekt
             switch (ausbildung)
             {
                 case Ausbildungen.Fachinformatiker:
-                    exams = new Exams[] { new Exams("Einrichten eines IT-geschützten Arbeitsplatzes", 20, 1), new Exams("Planen eines Softwareproduktes", 10, 2), new Exams("Entwicklung und Umsetzung von Algorithmen", 10, 2), new Exams("Wirtschafts- und Sozialkunde", 10, 2), new Exams("Betriebliche Projektarbeit", 50, 2), new Exams("Präsentation und Fachgespräch", 50, 2), new Exams("Planen und Umsetzen eines Softwareprojekts", 50, 2) };
+                    exams = new Exams[] { new Exams("Einrichten eines IT-geschützten Arbeitsplatzes", 20, 1, 1), new Exams("Planen eines Softwareproduktes", 10, 2, 2), new Exams("Planen und Umsetzen eines Softwareprojekts", 50, 2, 2), new Exams("Entwicklung und Umsetzung von Algorithmen", 10, 2, 2), new Exams("Wirtschafts- und Sozialkunde", 10, 3, 2), new Exams("Betriebliche Projektarbeit", 50, 2, 2), new Exams("Präsentation und Fachgespräch", 50, 2, 2) };
                     break;
                 case Ausbildungen.Kaufmann_Digitalisierung:
                     exams = new Exams[] { };
