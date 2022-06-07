@@ -36,6 +36,7 @@ namespace Prüfungs_Ergebnis_Rechner
             Pupil pupil = new Pupil(AusbildungsBeruf, nachName, vorName, id);
             var berufe = new List<Beruf>(DisplayedObjects.Berufe);
             var beruf = berufe.Find(x => x.Name == AusbildungsBeruf.ToString());
+            if (beruf == null) beruf = new Beruf();
             beruf.AddPupil(pupil);
             if(beruf.Name == AusbildungsBeruf.ToString())
             {
