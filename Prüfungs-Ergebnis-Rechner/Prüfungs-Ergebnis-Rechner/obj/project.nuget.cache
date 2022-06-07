@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "skdNqXMmMVLOgcUYHghyYG7c6ZQVtRZoIepvPsutFWdSTIRj1CyWBQuMEZxQlHbajie2zQzdAWOPLdrl/7lpXQ==",
+  "dgSpecHash": "Cf3YUsd1nJC/e6sYZy7GDL40HwX3EvaY7a8cD7Mpk33EwbE1/ZgHyLSqg6N6AnyUgj/OBRF9zV7jqIB0XDfysQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tobia\\OneDrive\\Dokumente\\School\\LF5\\Prüfngs-Ergebnis-Rechner\\Pruefungs-Ergebnis-Rechner\\Prüfungs-Ergebnis-Rechner\\Prüfungs-Ergebnis-Rechner\\Prüfungs-Ergebnis-Rechner.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\code\\Schule\\Prüfungsrechner\\Prüfungs-Ergebnis-Rechner\\Prüfungs-Ergebnis-Rechner\\Prüfungs-Ergebnis-Rechner.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Leon\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Leon\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512",
+    "C:\\Users\\Leon\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\Leon\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Leon\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

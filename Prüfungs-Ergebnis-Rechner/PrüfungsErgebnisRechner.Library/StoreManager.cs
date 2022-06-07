@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using PrüfungsErgebnisRechner.Library;
 
 namespace PrüfungsProjekt
 {
@@ -9,7 +10,7 @@ namespace PrüfungsProjekt
     {
         public static string LastPath { get; private set; }
         public static string LastName { get; private set; }
-        public static void Store(List<Pupil> pupils, string path = null, string name = null)
+        public static void Store(Beruf[] berufe, string path = null, string name = null)
         {
             if(string.IsNullOrEmpty(path) && string.IsNullOrEmpty(LastPath))
             {
@@ -41,23 +42,24 @@ namespace PrüfungsProjekt
                 name += ".prf";
             }
 
-            File.WriteAllText(Path.Combine(path, name), JsonConverter.ConvertToJson(pupils));
+            File.WriteAllText(Path.Combine(path, name), JsonConverter.ConvertToJson(berufe));
         }
 
-        public static List<Pupil> ReadFile(string path)
+        public static Beruf[] ReadFile(string path)
         {
-            return JsonConverter.ConvertFromJson(path);
+            var test = JsonConverter.ConvertFromJson(path);
+            return test;
         }
     }
 
     static class JsonConverter
     {
-        public static string ConvertToJson(List<Pupil> input)
+        public static string ConvertToJson(Beruf[] input)
         {
             return JsonConvert.SerializeObject(input);
         }
 
-        public static List<Pupil> ConvertFromJson(string path)
+        public static Beruf[] ConvertFromJson(string path)
         {
             if (string.IsNullOrEmpty(path))
             {
@@ -66,8 +68,8 @@ namespace PrüfungsProjekt
                 throw new Exception("File Type is not accepted");
             }
             string text = File.ReadAllText(path);
-
-            return JsonConvert.DeserializeObject<List<Pupil>>(text);
+            var test = JsonConvert.DeserializeObject<JsonFile>(text);
+            return test.Berufe;
         }
     }
 }
