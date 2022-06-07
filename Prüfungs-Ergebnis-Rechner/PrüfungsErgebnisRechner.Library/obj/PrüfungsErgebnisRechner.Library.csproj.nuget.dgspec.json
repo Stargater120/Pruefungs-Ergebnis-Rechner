@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tobia\\OneDrive\\Dokumente\\School\\LF5\\Prüfngs-Ergebnis-Rechner\\Pruefungs-Ergebnis-Rechner\\Prüfungs-Ergebnis-Rechner\\PrüfungsErgebnisRechner.Library\\PrüfungsErgebnisRechner.Library.csproj": {}
+    "D:\\code\\Schule\\Prüfungsrechner\\Prüfungs-Ergebnis-Rechner\\PrüfungsErgebnisRechner.Library\\PrüfungsErgebnisRechner.Library.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tobia\\OneDrive\\Dokumente\\School\\LF5\\Prüfngs-Ergebnis-Rechner\\Pruefungs-Ergebnis-Rechner\\Prüfungs-Ergebnis-Rechner\\PrüfungsErgebnisRechner.Library\\PrüfungsErgebnisRechner.Library.csproj": {
+    "D:\\code\\Schule\\Prüfungsrechner\\Prüfungs-Ergebnis-Rechner\\PrüfungsErgebnisRechner.Library\\PrüfungsErgebnisRechner.Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tobia\\OneDrive\\Dokumente\\School\\LF5\\Prüfngs-Ergebnis-Rechner\\Pruefungs-Ergebnis-Rechner\\Prüfungs-Ergebnis-Rechner\\PrüfungsErgebnisRechner.Library\\PrüfungsErgebnisRechner.Library.csproj",
+        "projectUniqueName": "D:\\code\\Schule\\Prüfungsrechner\\Prüfungs-Ergebnis-Rechner\\PrüfungsErgebnisRechner.Library\\PrüfungsErgebnisRechner.Library.csproj",
         "projectName": "PrüfungsErgebnisRechner.Library",
-        "projectPath": "C:\\Users\\Tobia\\OneDrive\\Dokumente\\School\\LF5\\Prüfngs-Ergebnis-Rechner\\Pruefungs-Ergebnis-Rechner\\Prüfungs-Ergebnis-Rechner\\PrüfungsErgebnisRechner.Library\\PrüfungsErgebnisRechner.Library.csproj",
-        "packagesPath": "C:\\Users\\Tobia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tobia\\OneDrive\\Dokumente\\School\\LF5\\Prüfngs-Ergebnis-Rechner\\Pruefungs-Ergebnis-Rechner\\Prüfungs-Ergebnis-Rechner\\PrüfungsErgebnisRechner.Library\\obj\\",
+        "projectPath": "D:\\code\\Schule\\Prüfungsrechner\\Prüfungs-Ergebnis-Rechner\\PrüfungsErgebnisRechner.Library\\PrüfungsErgebnisRechner.Library.csproj",
+        "packagesPath": "C:\\Users\\Leon\\.nuget\\packages\\",
+        "outputPath": "D:\\code\\Schule\\Prüfungsrechner\\Prüfungs-Ergebnis-Rechner\\PrüfungsErgebnisRechner.Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "E:\\visualstudio\\shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Tobia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -62,9 +62,6 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
