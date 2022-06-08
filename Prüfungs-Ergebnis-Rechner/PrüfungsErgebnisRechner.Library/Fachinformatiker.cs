@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrüfungsErgebnisRechner.Library;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -21,7 +22,7 @@ namespace PrüfungsProjekt
             switch (ausbildung)
             {
                 case Ausbildungen.Fachinformatiker:
-                    exams = new Exams[] { new Exams("Einrichten eines IT-geschützten Arbeitsplatzes", 20, 1, 1), new Exams("Planen eines Softwareproduktes", 10, 2, 2), new Exams("Planen und Umsetzen eines Softwareprojekts", 50, 2, 2), new Exams("Entwicklung und Umsetzung von Algorithmen", 10, 2, 2), new Exams("Wirtschafts- und Sozialkunde", 10, 3, 2), new Exams("Betriebliche Projektarbeit", 50, 2, 2), new Exams("Präsentation und Fachgespräch", 50, 2, 2) };
+                    exams = new Exams[] { new Exams("Einrichten eines IT-geschützten Arbeitsplatzes", 20, exampart: 0, apt: 1, false), new Exams("Betriebliche Projektarbeit", 50, 1, 2, false), new Exams("Präsentation und Fachgespräch", 50,1, 2, false), new Exams("Planen eines Softwareproduktes", 10, 2, 2, false), new Exams("Entwicklung und Umsetzung von Algorithmen", 10, 3, 2, false), new Exams("Wirtschafts- und Sozialkunde", 10, 4, 2, false) };
                     break;
                 case Ausbildungen.Kaufmann_Digitalisierung:
                     exams = new Exams[] { };
@@ -35,6 +36,22 @@ namespace PrüfungsProjekt
                 default: throw new NotImplementedException("Dieser Fall exisitert nicht");
             }
             return exams;
+        }
+
+        public static Prüfungsbereich[] PreparePrüfungsbereiche(Ausbildungen ausbildungen)
+        {
+            var exams = new List<Exams>(PrepareExams(ausbildungen));
+            var prüfungsbereiche = new List<Prüfungsbereich>();
+            do
+            {
+                var exame = exams.FindAll(x => x.AbschlussPrüfungsTeil == exams[0].AbschlussPrüfungsTeil && x.ExamPart == exams[0].ExamPart);
+                var bereich = new Prüfungsbereich(exams[0].AbschlussPrüfungsTeil, exams[0].ExamPart, exams[0].Gewichtung);
+                bereich.Exame = exame.ToArray();
+                exams.RemoveAll(x => x.AbschlussPrüfungsTeil == exame[0].AbschlussPrüfungsTeil && x.ExamPart == exame[0].ExamPart);
+                prüfungsbereiche.Add(bereich);
+            } while (exams.Count > 0);
+
+            return prüfungsbereiche.ToArray();
         }
 
         public static ObservableCollection<string> GetListOfAusbildungen()

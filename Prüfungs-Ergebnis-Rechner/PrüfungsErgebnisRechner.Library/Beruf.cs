@@ -30,7 +30,12 @@ namespace PrüfungsErgebnisRechner.Library
 
         public void AddPupil(Pupil pupil)
         {
-            var pupilList = new List<Pupil>(Pupils);
+            List<Pupil> pupilList = new List<Pupil>();
+            if(Pupils != null)
+            {
+                pupilList.AddRange(Pupils);
+            }
+            
             pupilList.Add(pupil);
             Pupils = pupilList.ToArray();
         }

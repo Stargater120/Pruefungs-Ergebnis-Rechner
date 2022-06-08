@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\App.xaml
-235804296
+31989818239
 
-7129523610
+91976574490
 1941406075900
-AddPrüflingWindow.xaml;MainWindow.xaml;
+AddPrüflingWindow.xaml;ExtraPrüfungsWindow.xaml;MainWindow.xaml;
 
-True
+False
 

@@ -6,6 +6,9 @@
     <RootNamespace>Prüfungs_Ergebnis_Rechner</RootNamespace>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+	<PropertyGroup>
+		<GenerateMSBuildEditorConfigFile>false</GenerateMSBuildEditorConfigFile>
+	</PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />

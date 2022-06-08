@@ -1,0 +1,7 @@
+C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\obj\Release\netcoreapp3.1\win-x86\Prüfungs-Ergebnis-Rechner.csproj.AssemblyReference.cache
+C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\obj\Release\netcoreapp3.1\win-x86\AddPrüflingWindow.g.cs
+C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\obj\Release\netcoreapp3.1\win-x86\ExtraPrüfungsWindow.g.cs
+C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\obj\Release\netcoreapp3.1\win-x86\MainWindow.g.cs
+C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\obj\Release\netcoreapp3.1\win-x86\App.g.cs
+C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\obj\Release\netcoreapp3.1\win-x86\Prüfungs-Ergebnis-Rechner_MarkupCompile.cache
+C:\Users\Tobia\OneDrive\Dokumente\School\LF5\Prüfngs-Ergebnis-Rechner\Pruefungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\Prüfungs-Ergebnis-Rechner\obj\Release\netcoreapp3.1\win-x86\Prüfungs-Ergebnis-Rechner_MarkupCompile.lref
