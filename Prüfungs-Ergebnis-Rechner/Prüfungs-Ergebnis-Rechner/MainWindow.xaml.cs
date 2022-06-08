@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Collections.ObjectModel;
 using Microsoft.Win32;
 using System.IO;
+using System.Windows.Input;
 
 namespace Prüfungs_Ergebnis_Rechner
 {
@@ -20,7 +21,8 @@ namespace Prüfungs_Ergebnis_Rechner
         public MainWindow()
         {
             InitializeComponent();
-           
+            BerufSlector.ItemsSource = ExamPreparer.GetListOfAusbildungen();
+            Tester_Liste.ItemsSource = DisplayedObjects.DisplayedPupils;
         }
 
         private void OpenAddPrüfling(object sender, RoutedEventArgs e)
@@ -33,14 +35,21 @@ namespace Prüfungs_Ergebnis_Rechner
         }
 
         private void BerufSlector_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {   
-            beruf.FillPupilsList(BerufSlector.SelectedItem as string);
-            Tester_Liste.ItemsSource = DisplayedObjects.DisplayedPupils;
+        {   if(DisplayedObjects.Berufe.Count > 0)
+            {
+                beruf.FillPupilsList(BerufSlector.SelectedItem as string);
+                Tester_Liste.ItemsSource = DisplayedObjects.DisplayedPupils;
+                DisplayedObjects.AusgewählterBeruf = BerufSlector.SelectedItem as string;
+            }
         }
 
         private void Save(object sender, RoutedEventArgs e)
         {
-            jsonFile.Save(DisplayedObjects.FilePath);
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\..\..\..\"));
+            saveFileDialog.ShowDialog();
+            string path = saveFileDialog.FileName;
+            jsonFile.Save(path);
         }
 
         private void Tester_Liste_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -48,9 +57,13 @@ namespace Prüfungs_Ergebnis_Rechner
             if(Tester_Liste.SelectedItem != null)
             {
                 DisplayedObjects.Pupil = (Pupil)Tester_Liste.SelectedItem;
-                DisplayedObjects.DisplayedExams = new ObservableCollection<Exams>(DisplayedObjects.Pupil.Noten);
-                ErgebnisListe.ItemsSource = DisplayedObjects.DisplayedExams;
+                DisplayedObjects.DisplayedExams = new ObservableCollection<Exams>(DisplayedObjects.Pupil.GetExams());
+                DisplayedObjects.DisplayPrüfungsbereiche = new ObservableCollection<Prüfungsbereich>(DisplayedObjects.Pupil.Prüfungsbereiche);
+                ErgebnisListe.ItemsSource = DisplayedObjects.DisplayPrüfungsbereiche;
                 BerechnungsFeld.ItemsSource = DisplayedObjects.DisplayedExams;
+                DisplayedObjects.ListForOne.Clear();
+                DisplayedObjects.ListForOne.Add(DisplayedObjects.Pupil);
+                Ergebnisse.ItemsSource = DisplayedObjects.ListForOne;
             }
         }
 
@@ -65,10 +78,15 @@ namespace Prüfungs_Ergebnis_Rechner
                 jsonFile.Load(openFileDialog.FileName);
                 beruf.FillPupilsList("Fachinformatiker");
                 Tester_Liste.ItemsSource = DisplayedObjects.DisplayedPupils;
-                BerufSlector.ItemsSource = ExamPreparer.GetListOfAusbildungen();
-            }
                 
-            
+            }
+        }
+
+        private void ExtraHinzufügen(object sender, RoutedEventArgs e)
+        {
+            ExtraPrüfungsWindow epw = new ExtraPrüfungsWindow();
+            epw.Show();
+            epw.PrüfungsSelector.ItemsSource = DisplayedObjects.GetExtraprüfungsNamen();
         }
     }
 }

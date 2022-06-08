@@ -1,0 +1,8 @@
+C:\Users\Tobia\OneDrive\Desktop\Prüfungs-Ergebnis-Rechner.exe
+C:\Users\Tobia\OneDrive\Desktop\Prüfungs-Ergebnis-Rechner.dll
+C:\Users\Tobia\OneDrive\Desktop\Prüfungs-Ergebnis-Rechner.deps.json
+C:\Users\Tobia\OneDrive\Desktop\Prüfungs-Ergebnis-Rechner.runtimeconfig.json
+C:\Users\Tobia\OneDrive\Desktop\Prüfungs-Ergebnis-Rechner.pdb
+C:\Users\Tobia\OneDrive\Desktop\Newtonsoft.Json.dll
+C:\Users\Tobia\OneDrive\Desktop\PrüfungsErgebnisRechner.Library.dll
+C:\Users\Tobia\OneDrive\Desktop\PrüfungsErgebnisRechner.Library.pdb

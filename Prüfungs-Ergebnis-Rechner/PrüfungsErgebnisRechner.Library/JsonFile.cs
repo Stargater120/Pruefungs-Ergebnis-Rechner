@@ -16,8 +16,9 @@ namespace PrüfungsErgebnisRechner.Library
 
         public void Save(string path)
         {
-            var name = path.Substring(path.LastIndexOf("/"));
-            StoreManager.Store(Berufe, path, name);
+            var name = path.Substring(path.LastIndexOf(@"\") + 2);
+            Berufe = DisplayedObjects.Berufe.ToArray();
+            StoreManager.Store(this, path, name);
         }
 
         public void Load(string path)

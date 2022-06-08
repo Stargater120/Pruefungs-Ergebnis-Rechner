@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prüfungs_Ergebnis_Rechner"
         mc:Ignorable="d"
-        Title="Tobias" Height="500" Width="1100"
+        Title="Tobias und Leon" Height="500" Width="1100"
         Background="Black">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -21,30 +21,40 @@
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Column="3" Grid.ColumnSpan="4" Height="360" VerticalAlignment="Bottom" x:Name="BerechnungsFeld" ItemsSource="{Binding DisplayedExams}">
+        <ListBox x:Name="Ergebnisse" Grid.Column="3" Grid.ColumnSpan="5" Height="60" VerticalAlignment="Top" Margin=" 0 55 0 0" Background="Black" BorderThickness="0" ItemsSource="{Binding Pupil}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="Ergebnis" Grid.Column="4" Grid.ColumnSpan="2" Text="{Binding Path=Ergebnis}" Foreground="White" FontSize="20"/>
+                        <TextBlock x:Name="PunkteGesamt" Grid.Column="6" Grid.ColumnSpan="2" Margin="30 0 0 0" Text="{Binding Path=GesamtPunktzahl}" Foreground="White" FontSize="20"/>
+                        <TextBlock x:Name="GesamtNote" Grid.Column="8" Grid.ColumnSpan="2" Margin="30 0 0 0" Text="{Binding Path=EndNote}" Foreground="White" FontSize="20"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListView Grid.Column="3" Grid.ColumnSpan="5" Height="360" VerticalAlignment="Bottom" x:Name="BerechnungsFeld" ItemsSource="{Binding DisplayedExams}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="AP" DisplayMemberBinding="{Binding Path=ExamPart}" Width="40"/>
-                    <GridViewColumn Header="PB" Width="40"/>
+                    <GridViewColumn Header="AP" DisplayMemberBinding="{Binding Path=AbschlussPrüfungsTeil}" Width="40"/>
+                    <GridViewColumn Header="PB" DisplayMemberBinding="{Binding Path=ExamPart}" Width="40"/>
                     <GridViewColumn Header="Prüfungs Name" DisplayMemberBinding="{Binding Path=Name}" Width="260"/>
-                    <GridViewColumn Header="Punkte" Width="50">
+                    <GridViewColumn Header="Punkte" Width="70">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox Width="35" Text="{Binding Path=ReachedPoints}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
+                    <GridViewColumn Header="Note" Width="70" DisplayMemberBinding="{Binding Path=Grade}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView Grid.Column="7" Grid.ColumnSpan="4" Height="360" VerticalAlignment="Bottom" x:Name="ErgebnisListe" ItemsSource="{Binding DisplayedExams}">
+        <ListView Grid.Column="8" Grid.ColumnSpan="3" Height="360" VerticalAlignment="Bottom" x:Name="ErgebnisListe" ItemsSource="{Binding DisplayedExams}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="AP" DisplayMemberBinding="{Binding Path=ExamPart}" Width="40"/>
-                    <GridViewColumn Header="PB" Width="40"/>
-                    <GridViewColumn Header="Bereich Gesamt" Width="130"/>
-                    <GridViewColumn Header="Note" Width="40" DisplayMemberBinding="{Binding Path=Grade}"/>
-                    <GridViewColumn Header="Ergebnis" Width="130"/>
+                    <GridViewColumn Header="Bereich" Width="100" DisplayMemberBinding="{Binding Path=Bereichsteil}"/>
+                    <GridViewColumn Header="Punkte" Width="60" DisplayMemberBinding="{Binding Path=Punkte}"/>
+                    <GridViewColumn Header="Note" Width="60" DisplayMemberBinding="{Binding Path=Note}"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -60,6 +70,7 @@
         </ComboBox>
         <Button Click="Save" Grid.Column="9" Content="Speichern" Margin="18,15,17,0" VerticalAlignment="Top" Width="65" Height="23"/>
         <Button Grid.Column="8" Click="Load" Height="23" Width="50" Content="Laden" VerticalAlignment="Top" Margin="0 15 0 0"/>
+        <Button Grid.Column="6" Grid.ColumnSpan="2" Height="23" VerticalAlignment="Top" Margin="0 15 0 0" Content="Extra Prüfung hinzufügen" Click="ExtraHinzufügen"/>
         <ListView Grid.Column="0" Grid.ColumnSpan="3" x:Name="Tester_Liste" SelectionChanged="Tester_Liste_SelectionChanged" ItemsSource="{Binding Pupils}" Height="360" VerticalAlignment="Bottom">
             <ListView.View>
                 <GridView>

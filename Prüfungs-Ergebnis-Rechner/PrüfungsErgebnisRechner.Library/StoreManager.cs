@@ -10,7 +10,7 @@ namespace PrüfungsProjekt
     {
         public static string LastPath { get; private set; }
         public static string LastName { get; private set; }
-        public static void Store(Beruf[] berufe, string path = null, string name = null)
+        public static void Store(JsonFile jsonFile, string path = null, string name = null)
         {
             if(string.IsNullOrEmpty(path) && string.IsNullOrEmpty(LastPath))
             {
@@ -42,7 +42,7 @@ namespace PrüfungsProjekt
                 name += ".prf";
             }
 
-            File.WriteAllText(Path.Combine(path, name), JsonConverter.ConvertToJson(berufe));
+            File.WriteAllText(Path.Combine(path), JsonConverter.ConvertToJson(jsonFile));
         }
 
         public static Beruf[] ReadFile(string path)
@@ -54,7 +54,7 @@ namespace PrüfungsProjekt
 
     static class JsonConverter
     {
-        public static string ConvertToJson(Beruf[] input)
+        public static string ConvertToJson(JsonFile input)
         {
             return JsonConvert.SerializeObject(input);
         }

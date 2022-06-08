@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Prüfungs_Ergebnis_Rechner.DisplayModels;
+using PrüfungsErgebnisRechner.Library;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -13,18 +15,22 @@ namespace PrüfungsProjekt
         public int ExamPart { get; private set; }
         public int Grade { get => GetGrade(); }
         public int AbschlussPrüfungsTeil { get; set; }
-        public int BereichGesamt { get; private set; }
+        public bool IsExtraPrüfung { get; private set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         public int ReachedPoints
         {
             get => _ReachedPoints;
             set
             {
                 if (value < 0) _ReachedPoints = 0; else if (value > 100) _ReachedPoints = 100; else _ReachedPoints = value;
+                //if(IsExtraPrüfung)
+                //    _ReachedPoints /= 2;
                 GetGrade();
                 OnPropertyChanged("ReachedPoints");
                 OnPropertyChanged("Grade");
+                EmitChange();
             }
         }
 
@@ -41,32 +47,22 @@ namespace PrüfungsProjekt
 
             return result;
         }
-        public Exams(string name, int gewichtung, int exampart, int apt)
+        public Exams(string name, int gewichtung, int exampart, int apt, bool isExtraPrüfung = false)
         {
 
             Name = name;
             Gewichtung = gewichtung;
             ExamPart = exampart;
             AbschlussPrüfungsTeil = apt;
+            IsExtraPrüfung = isExtraPrüfung;
         }
 
-        public static int Result(Exams[] exams)
+        private void EmitChange()
         {
-            int result = 0;
-            
-            foreach (Exams exam in exams)
-            {
-                result += exam.ReachedPoints * exam.Gewichtung;
-            }
-
-            return result;
-        }
-
-        public void SetBereichGesamt(int value)
-        {
-            if(value < 0) { value = 0; }
-            if(value > 100) { value = 100; }
-            BereichGesamt = value;
+            var bereiche = new List<Prüfungsbereich>(DisplayedObjects.DisplayPrüfungsbereiche);
+            var bereich = bereiche.Find(x => x.Prüfungsteil == AbschlussPrüfungsTeil && x.Bereichsteil == ExamPart);
+            bereich.CalculateBereichGesamt();
+            bereich.CalculateNote();
         }
 
         protected void OnPropertyChanged(string name = null)

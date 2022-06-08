@@ -1,0 +1,27 @@
+﻿<Window x:Class="Prüfungs_Ergebnis_Rechner.ExtraPrüfungsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prüfungs_Ergebnis_Rechner"
+        mc:Ignorable="d"
+        Title="ExtraPrüfungsWindow" Height="180" Width="300">
+    <Grid HorizontalAlignment="Right" Width="300">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Prüfungsbereich" FontSize="20" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <ComboBox SelectedIndex="0" x:Name="PrüfungsSelector" ItemsSource="{Binding test}" Grid.Row="1" VerticalAlignment="Center"  Width="180" Height="30">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Grid.Row="2" Width="70" Height="25" Content="Hinzufügen" Click="Close"/>
+    </Grid>
+</Window>
